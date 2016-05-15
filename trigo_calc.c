@@ -63,7 +63,7 @@ int row_calc(double phi_min, double phi_max, double phi_step, int type, int eps)
 
     int i = 0;
     int this_line = 1;
-    const int screen_len = 50;
+    const int screen_len = 20;
     char *separ = " | ";
     char *char_sep;
     char *doub_sep;
@@ -104,12 +104,12 @@ int row_calc(double phi_min, double phi_max, double phi_step, int type, int eps)
         printf("\tYou entered too small valuesf for angles\n");
         return 1;
     }
+
     printf(char_sep, eps / 2 + 6, "Angle");
     printf(char_sep, eps + 5, "Teylor res");
     printf(char_sep, eps + 5, "C result");
     printf("%*s\n", eps + 8, "Difference");
 
-//    for(phi = phi_min; fabsl(phi_max - phi) >= fabsl(phi_step); phi += phi_step)
     for(i = 0; i < fabsl((phi_max - phi_min) / phi_step); i++)
     {
         phi = phi_min + i * phi_step;

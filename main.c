@@ -28,11 +28,20 @@ void program_run()
     double x_min = 0, x_max = 0, x_step = 0;
     int errors = 0, type = 0, eps = 14;
 
-    x_min = double_input("Input the starting angle:\n", -9999, 9999);
-    x_max = double_input("Input the ending angle:\n", -9999, 9999);
-    x_step = double_input("Input the angle increment:\n", -9999, 9999);
-    type = integer_input("Input '0' to caclulate sine, '1' - to cosine:\n", 0, 1);
-    eps = integer_input("Input the number of the digis of the precise:\n", 0, 13);
+    printf("Input the starting angle:\n");
+    x_min = double_input(-9999, 9999);
+
+    printf("Input the ending angle:\n");
+    x_max = double_input(-9999, 9999);
+
+    printf("Input the angle increment(abs more than 10^-5):\n");
+    x_step = double_input(-999, 999);
+
+    printf("Input '0' to caclulate sine, '1' - to cosine:\n");
+    type = integer_input(0, 1);
+
+    printf("Input the number of the digis of the precise:\n");
+    eps = integer_input(0, 13);
 
 //    test values:
 //    errors += row_calc(0, 360, 1, 0, eps_2); //
